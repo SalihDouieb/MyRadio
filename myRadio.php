@@ -39,7 +39,7 @@ if ($albumId) {
 
         <form method="POST" class="search">
             <?= $result ?>
-            <h>Search for album:</h>
+            <h>Search for Album / Artist:</h>
             <input type="search" name="searchTerm" placeholder="Search" class="search-bar" maxlength="10">
             <button type="submit" class="search-button">🔍</button>
         </form>
@@ -53,9 +53,9 @@ if ($albumId) {
     <div class="container-radio">
         <?php
         if (!$album) {
-            displayAllAlbums(); // Display all albums when no album is selected
+            displayAllAlbums(); 
         } else {
-            displaySingleAlbum($album, true); // Display the single album details
+            displaySingleAlbum($album, true); 
         }
         ?>
     </div>

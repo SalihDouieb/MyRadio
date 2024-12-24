@@ -53,14 +53,13 @@ function displayAllAlbums() {
         echo '</div>';
         echo '</div>';
         
-        // Display album details in a table
         echo '<table class="album-table">';
         echo '<thead>';
         echo '<tr>';
         echo '<th>' .'<a href="?albumId=' . $albumData['id'] .'"><img class="tableCover" src="' . $albumData['cover'] . '"></a></th>';
         echo '<th>Artist</th>';
         echo '<th>Track</th>';
-        echo '<th>Play</th>';  // Play button for each track
+        echo '<th>Play</th>';  
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
@@ -71,7 +70,7 @@ function displayAllAlbums() {
             echo '<td>' . $albumData['artist'] . '</td>';
             echo '<td>' . $track['name'] . '</td>';
             echo '<td>';
-            // Display Play button for each track
+
             echo '<form method="POST">';
             foreach (['trackUrl' => $track['url'], 'artistImg' => $albumData['img'], 'trackName' => $track['name'], 'artistName' => $albumData['artist'], 'albumCover' => $albumData['cover']] as $name => $value) {
                 echo '<input type="hidden" name="' . $name . '" value="' . $value . '">';
@@ -102,14 +101,13 @@ function displaySingleAlbum($album, $showInfo = false) {
     echo '</form>';
     echo '</div>';
     echo '<div class="albumContent">';
-
+    echo '<div class="albumContent1">';
     echo '<h3>Album: ' . $album['title'] . '</h3>';
     echo '<h3>Artist: ' . $album['artist'] . '</h3>';
 
     // Back Button
     echo '<a href="?albumId=0"><button class="button-back">Back</button></a>';
 
-    // Track Details with Play button
     foreach ($album['tracks'] as $track) {
         echo '<p>Track Name: ' . $track['name'] . '</p>';
         echo '<form method="POST">';
@@ -122,12 +120,12 @@ function displaySingleAlbum($album, $showInfo = false) {
         echo '</form>';
     }
 
-    // Info about the Album
     if ($showInfo) {
         echo '<h3>Info:</h3><p class="album-info">' . $album['info'] . '</p>';
     }
 
-    echo '</div>'; // End of albumContent
+    echo '</div>'; 
+    echo '</div>'; 
 }
 
 function searchAlbum($searchTerm) {

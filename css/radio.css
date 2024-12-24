@@ -13,6 +13,9 @@ body::-webkit-scrollbar {
     background-color: #0000003a;
     border-radius: 15px;
 }
+.albumContent {
+    padding: 15px;
+}
 .album-info {
     width: 500px;
     background-color: transparent;
